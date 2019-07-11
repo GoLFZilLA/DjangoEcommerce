@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block title %} {% endblock  %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <div class="jumbotron">
+        <h1 class="display-3">Hi {{ user.username }} ! </h1>
+        <a href="{% url 'logout' %}" class="btn btn-lg btn-danger"> Logout</a>
+    </div>
+{% else %}
+    <div class="jumbotron">
+        <h1 class="display-3">Your are not login</h1>
+    </div>
+{% endif %}
+{% endblock  %}
